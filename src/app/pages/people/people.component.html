@@ -1,0 +1,16 @@
+<p></p>
+<form (ngSubmit) = "savePerson(personForm)" #personForm="ngForm" >
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Nombre de la persona</label>
+    <input type="text" class="form-control" [class.is-invalid]="personName.invalid && personName.touched" id="personName" name="personName" [ngModel]="person.name"
+    placeholder="Escriba el nombre de la persona" required #personName="ngModel">
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Seleccione fecha de nacimiento</label>
+    <input type="date" class="form-control" [class.is-invalid]="personDate.invalid && personDate.touched" id="personDate" required name="personDate" [ngModel]="person.birthDate"
+     #personDate="ngModel">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
